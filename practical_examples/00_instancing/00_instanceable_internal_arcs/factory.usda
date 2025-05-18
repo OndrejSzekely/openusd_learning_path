@@ -1,0 +1,38 @@
+#usda 1.0
+(
+    defaultPrim = "Factory"
+)
+
+def Scope "Factory" (
+    kind = "assembly"
+)
+{
+    def Scope "BarrelBundle" (
+        kind = "group"
+    )
+    {
+        def Xform "Barrel_0" (
+            kind = "component"
+        )
+        {
+            double3 xformOp:translate = (100, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+
+            def Xform "Geometry"
+            {
+                def Cylinder "Cylinder"
+                {
+                }
+            }
+        }
+
+        def Xform "Barrel_1" (
+            instanceable = true
+            prepend references = </Factory/BarrelBundle/Barrel_0>
+        )
+        {
+            double3 xformOp:translate = (110, 0, 0)
+        }
+    }
+}
+

@@ -1,0 +1,33 @@
+#usda 1.0
+(
+    defaultPrim = "Factory"
+)
+
+def Scope "Factory" (
+    kind = "assembly"
+)
+{
+    def Scope "AssembledBarrels" (
+        kind = "group"
+    )
+    {
+        def "Barrel_0" (
+            instanceable = true
+            prepend references = @openusd_learning_path/practical_examples/00_instancing/01_instanceable_external_arcs/barrel.usda@
+        )
+        {
+            double3 xformOp:translate = (100, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def "Barrel_1" (
+            instanceable = true
+            prepend references = @openusd_learning_path/practical_examples/00_instancing/01_instanceable_external_arcs/barrel.usda@
+        )
+        {
+            double3 xformOp:translate = (110, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+    }
+}
+
