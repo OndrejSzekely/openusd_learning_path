@@ -1,0 +1,68 @@
+#usda 1.0
+
+def "Employee" (
+    variants = {
+        string critterVariant = "Dragon"
+    }
+    prepend variantSets = "critterVariant"
+)
+{
+    custom string title
+    variantSet "critterVariant" = {
+        "Bear" (
+            variants = {
+                string jobVariant = "Trainer"
+            }
+            prepend variantSets = "jobVariant"
+        ) {
+            variantSet "jobVariant" = {
+                "Rider" {
+                    custom string title = "BearRider"
+
+                }
+                "Trainer" {
+                    custom string title = "BearTrainer"
+
+                }
+            }
+
+        }
+        "Bug" (
+            variants = {
+                string jobVariant = "Trainer"
+            }
+            prepend variantSets = "jobVariant"
+        ) {
+            variantSet "jobVariant" = {
+                "Squasher" {
+                    custom string title = "BugSquasher"
+
+                }
+                "Trainer" {
+                    custom string title = "BugTrainer"
+
+                }
+            }
+
+        }
+        "Dragon" (
+            variants = {
+                string jobVariant = "Trainer"
+            }
+            prepend variantSets = "jobVariant"
+        ) {
+            variantSet "jobVariant" = {
+                "Rider" {
+                    custom string title = "DragonRider"
+
+                }
+                "Trainer" {
+                    custom string title = "DragonTrainer"
+
+                }
+            }
+
+        }
+    }
+}
+

@@ -1,0 +1,15 @@
+#usda 1.0
+(
+    defaultPrim = "World"
+    subLayers = [
+        @sublayer_a.usd@,
+        @sublayer_b.usd@
+    ]
+)
+
+def Xform "World"
+{
+    def Scope "Geometry"
+    {
+    }
+}
