@@ -1,0 +1,23 @@
+#usda 1.0
+
+
+class "_Base_cube" {
+    int size = 666.0
+}
+
+
+
+def Xform "CubeOver" (
+    prepend variantSets = "BoxVariantset"
+    variants = {
+        string BoxVariantset = "SelectCube"
+    }
+    references = </_Base_cube>
+)
+{
+variantSet "BoxVariantset" = {
+    "SelectCube" {
+        int size = 222.0
+    }
+}
+}
